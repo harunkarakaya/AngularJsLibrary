@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<script src="angularjs.js"></script>
+<body ng-app="">
+    <!-- ng app'i sadece bir kere kullanabiliyoruz. 2.bir ng app olmuyor. -->
+    <!-- Eğer her 2 div'de veya başka elementlerde ng app'i kullanmak istersek body'e ng app'i yazmamız yeterli. -->   
+    <!-- <div ng-app=""></div> -->
+    
+    <!-- ng init başlangıçta değer atıyor. -->
+
+    <div ng-init="isim='Sabit tanımlama'">
+        <!-- ng-init ile oluşturduğumuz isim değişkenini kullandık. -->
+        <p>Paragraf {{isim}}</p>
+
+        <!-- ng-bind ile isim değişkenini bind ettik. -->
+        <p ng-bind="isim"></p>
+
+        
+    </div>
+
+    <!-- Noktalı virgüller ile birden fazla değişken kullanabiliriz -->
+    <div ng-init="a=5; b=4">
+        <!-- initialize kısmındaki değişkenleri kullanarak çarpma işlemi -->
+        <p>5*4={{a*b}}</p>
+
+        <!-- Sabit değerler ile toplama işlemi -->
+        <p>{{10+5}}</p>
+    </div>
+
+    <div ng-init="ad='Harun';soyad='KARAKAYA'">
+        <p>{{ad + ' ' + soyad}}</p>
+
+        <!-- ng-bing ile değişkenleri yazdırma -->
+        <p ng-bind="ad + ' ' + soyad"></p>
+    </div>
+
+    <!-- ng-init içine object tanımlama -->
+    <div ng-init="kisi={isim:'Harun',soyisim:'KARAKAYA'}">
+        <p ng-bind="kisi.isim +' ' + kisi.soyisim"></p>
+        <p>{{kisi.isim + ' ' + kisi.soyisim}}</p>
+    </div>
+
+    <!-- ng-init ile dizi kullanımı -->
+    <div ng-init="sayilar=[1,2,3,4]">
+        <p>{{sayilar[2]}}</p>
+    </div>
+
+    <!-- arka plan rengi değişikliği -->
+    <div ng-init="renk='green'">
+        <p style="background-color:{{renk}}" ng-model="renk">Paragraf rengi</p>
+    </div>
+</body>
+</html>
