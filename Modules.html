@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angularjs.js"></script>
+
+<body ng-app="myApp" ng-controller="myController">
+   <!-- angular.js script'in içine yazılır. -->
+    <!-- module ve controller kullanarak değişkenler ile ekrana ad soyad yazdırma -->
+    
+    <!-- ng-init ilede bu kısmı yapabilirdik fakat her seferinde ng-init
+    kullanmaktansa controllerın aracılığıyla javascriptin içinde tanımlıyoruz 
+    ve bütün verileri topluca görerek daha kullanışlı bir yapı oluşturuyoruz. -->
+    <p>{{name + ' ' + surname}}</p>
+
+   <script>
+    
+    // ilk olarak modülümüzü oluşturuyoruz.
+    var app = angular.module("myApp", []);
+
+    //Modülün metodundan controllerımızı oluşturuyoruz.
+    //controller html dokümanımızı kontrol etmemizi sağlıyor.
+    //controller'ımıza ilk parametre olarak yukarıda tanımlamış olduğumuz ng-controller'ın adını yazmamız gerekiyor.
+    //ikinci parametre olarak fonksiyon yazıyoruz.
+    //$scope bu sayfadaki html dokümanına tamamen hakim olan bir parametre.
+    app.controller("myController", function($scope){
+        $scope.name = "Harun";
+        $scope.surname = "KARAKAYA";
+    });
+   </script>
+</body>
+</html>
