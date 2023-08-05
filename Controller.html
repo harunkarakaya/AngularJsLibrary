@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angularjs.js"></script>
+
+<body ng-app="myApp">
+    
+    <p ng-controller="myController">{{name + ' ' + surname}}</p>
+
+    <p ng-controller="myController2">{{age}}</p>
+
+    <script>
+
+        var app = angular.module("myApp",[]);
+
+        app.controller("myController",function($scope){
+
+            $scope.name = "Harun";
+            $scope.surname = "KARAKAYA";
+
+        });
+
+        //module'ümüzden sonsuz tane controller oluşturup kullanabiliriz.
+        //ng-app'imiz sadece 1 tane oluyor.
+        app.controller("myController2", function($scope){
+
+            $scope.age=28;
+        });
+    </script>
+
+</body>
+</html>
